@@ -121,7 +121,7 @@ export default function page() {
               <label htmlFor={styles.Obs}>Observaçõa:</label>
               <input type="text" name="observacao" id="OBS" placeholder="Observaçõa no Pet" autoComplete="Obs" readOnly />
             </div>
-
+            
           </fieldset>
         </form>
       </main>
