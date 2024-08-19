@@ -1,0 +1,138 @@
+.topo{
+    
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    display: flex;
+    background-color: #DADADA;
+    width: 100vw;
+    height: 90px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.logo1{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 10vh;
+    margin-left: 20px;
+    flex-direction: row;
+}
+.logo1 .logo{
+    
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 150px;
+}
+.header .logo1 .logo img{
+    display: flex;
+    width: 50px;
+    
+}
+.header .logo1 .logo h1{
+    font-size: 20px;
+    font-weight:bold;
+    margin-left: 100px;
+    margin-inline-end:-48px;
+    margin-top: -35px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    white-space: nowrap;
+    border-color: rgb(27, 247, 7);
+    color: black;
+}
+
+.header .logo1 .text{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-left: 70px;
+    width: 300px;
+   
+    
+}
+
+.header .logo1 .text .h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    font-weight: normal;
+    margin-top: 5px;
+    color: black;
+    
+}
+
+.header .divP{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 10vh;
+    margin-left: 138px;
+    flex-direction: row;
+    border: none;
+    width: 30%;
+    
+}
+.header .divP .notif{
+    width:90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 150px;
+    height: 75px;
+    margin-left: auto;
+ 
+}
+.button img{
+    width: 100%;
+    height: 100%;
+
+}
+.header .divP .notif .button img {
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    height: 50px;
+}
+.header .divP .notif .button{
+    border: none;
+    outline: none;
+    padding: 0%;
+    margin: 0%;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.header .divP .perfil{
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 150px;
+   
+}
+.header .divP .perfil .button{
+    
+    border: none;
+    outline: none;
+    padding: 0%;
+    margin: 0%;
+    outline: none;
+    background-color:transparent;
+    cursor: pointer;
+    width: 50%;
+    height: 85%;
+    
+}
+.header .divP .perfil .nome {
+    margin-top: -5px;
+}
+

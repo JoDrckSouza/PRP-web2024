@@ -7,15 +7,15 @@ export default function page() {
   const [image, setImage] = useState("/img/perfil.png");
 
   return (
-    <div>
-      <header>
+    <div className={styles.topo}>
+      <header className={styles.header}>
         <div className={styles.logo1}>
           <div className={styles.logo}>
             <img src="/img/Vector.png" alt="logo" />
             <h1>PRP -</h1>
           </div>
           <div className={styles.text}>
-            <h2 className='h2'>
+            <h2 className={styles.h2}>
               Plataforma de Registro de Pets
             </h2>
           </div>
