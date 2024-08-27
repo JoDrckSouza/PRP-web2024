@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     height: 100%;
+    background-color: rgb(255, 255, 255);
     /*pagina completa*/
 
 }
@@ -13,6 +14,8 @@
     height: 90px;
     justify-content: space-between;
     flex-direction: row;
+    border-bottom: 2px solid #1662aa;
+
     /*cabeçalho*/
     
 }
@@ -101,52 +104,50 @@
     /*conteiner de notif*/
  
 }
-.header .divP .notif .button img {
+.header .divP .notif img {
     width: 70px;
     align-items: center;
     justify-content: center;
     display: block;
     height: 50px;
-    background-color: #3A85CA;
     margin-left: -35%;
     /*conteiner de notif/img*/
 }
-.header .divP .notif .button{
-    border: none;
-    outline: none;
-    padding: 0%;
-    margin: 0%;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-    /*butão de notif*/
-    
-}
+
 .header .divP .perfil img {
-    width: 65px;
+    width: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     left: 10px;
-    background-color: #3A85CA;
-    margin-left: -25%;
+    margin-left: -45%;
     /*conteiner de perfil do proprietario /img*/
 }
 
 .header .divP .perfil .userNameLink{
     display: block;
-    margin-top: 9px;
+    margin-top: -10%;
     color: #0a0a0a; 
     text-decoration: none; 
     font-size: 14px; 
-    margin-left: -35%;
-    margin-top: -2%;
+    margin-left: -60%;
     /*conteiner de link/UserName*/
 
 }
 
+.main .fechar{
+    text-align: right;
+   
+}
+.main .fechar button{
+    margin-top: 2%;
+    margin-right: 3%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+}
 .main .pet{
-    background-color: aqua;
     display: grid;
     place-items: center;
     margin-top: 2%;
@@ -180,7 +181,6 @@
     font-weight: normal;
     font-weight: 170px;
     font-size: 80%;
-    background-color: #3A85CA;
     width: 13%;
     /*conteiner/(opicional)*/
 }
@@ -196,9 +196,9 @@
 
 .form {
     display: flex;
-    gap: 10px;
     padding: 50px;
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(255, 255, 255);
+    border-radius: none;
 
     /*conteiner*/
    
@@ -206,55 +206,72 @@
 .form fieldset{
     color: #000000;
     font-family:Arial, Helvetica, sans-serif;
+    border: none;
     /*cor todal do formulario*/
 
 }
 .primeira{
     height: 500px;
-    background-color: aquamarine;
     width: 50%;
+    margin-left: 12%;
     /*conteiner do promeiro fieldest*/
 
 }
 .form .primeira input{
-    background-color: aqua;
+    background-color: #F3EFEF;
     margin-left: 15px;
+    border-width: 1.5px;
     /*pega todos os inputs*/
 
 }
-.form .primeira .vacina {
-    background-color: rgb(250, 2, 2);
-    display: flex;
-    gap: 15px;
-    /*conteiner. coloca data dolado de vacina*/
-
+.form .primeira .Nome input{
+    width: 35%;
+    height: 20px;
+}
+.form .primeira .proprietario input{
+    width: 55%;
+    height: 20px;
+}
+.form .primeira .cor input{
+    width: 35%;
+    height: 20px;
+}
+.form .primeira .raca input{
+    width: 35%;
+    height: 20px;
+}
+.form .primeira .sexo input{
+    width: 35%;
+    height: 20px;
 }
 
-.form .primeira .datVac{
-    background-color: rgb(2, 250, 105);
-    width: 30%;
-    /*conteiner. afasta data de vacina*/
+.form .primeira .vacina {
+    display: flex;
+    /*conteiner. coloca data de vacina lado a lado*/
 
 }
 .form .primeira .datVac input{
     width: 97px;
+    
      /*diminui o tamanho do campo*/
 }
+.form .primeira .datVac {
+    margin-left: 3%;
+/*afasta data de vacina*/
 
-
+}
 
 .segunda{
-    background-color: rgb(245, 146, 223);
     width: 50%;
     /*conteiner do segundo fieldest*/
 }
 .form .segunda input{
-    background-color: aqua;
+    background-color: #F3EFEF;
     margin-left: 15px;
+    border-width: 1.5px;
     /*pega todos os inputs*/
 }
 .form .segunda .Peso{
-    background-color: #f00a0a;
     display: flex;
 
     /*conteiner. coloca uf do lado de peso*/
@@ -264,24 +281,30 @@
      /*diminui o tamanho do campo*/
 }
 .form .segunda .uf {
-    background-color: #3A85CA;
     width: 35%;
     margin-left: 15px;
 
     /*conteiner. afasta peso de uf*/
-
 }
 .form .segunda .uf input{
     width: 50px;
+    height: 20px;
      /*diminui o tamanho do campo*/
 }
+.form .segunda .scrSD input{
+    width: 40%;
+    height: 20px;
+}
+.form .segunda .cidade input{
+    width: 40%;
+    height: 20px;
+}
+
 .form .segunda .verm{
-    background-color: #f00a0a;
     display: flex;
     /*conteiner. Coloca data do lado de verm*/
 }
 .form .segunda .dataVerm{
-    background-color: #3A85CA;
     margin-left: 15px;
     /*conteiner. afasta data de vacina*/
 }
@@ -289,6 +312,16 @@
     width: 85px;
     /*diminui o tamanho do campo*/
 }
-.form .segunda .dataVerm input{
+.form .segunda .inputOBS {
+    width: 50%;
+    height: 50px;
+    margin-left: 17%;
+    margin-top: -15%;
+    /*campo de observação*/
     
+}
+.form .segunda .obs  {
+    padding-top: 5%;
+    /*label de obs*/
+
 }

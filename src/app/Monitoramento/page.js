@@ -3,10 +3,13 @@ import Image from "next/image";
 import Link from 'next/link';  // Importa o componente Link do Next.js
 import { useState } from 'react';
 import styles from "./page.module.css";
+import {useRouter} from 'next/router';
 
 export default function page() {
   const [image, setImage] = useState("/img/perfil.png");
   const userName = "Joana darck";  // Substitua pelo nome real do usuário
+  const handleClick = () => {Router.back()};
+
 
   return (
     <div className={styles.topo}>
@@ -24,9 +27,9 @@ export default function page() {
         </div>
         <div className={styles.divP}>
           <div className={styles.notif}>
-            <button className={styles.button}>
-              <img src="/img/notificacao.png" alt="notificação" />
-            </button>
+          <Link href="/pagina-de-dados-usuario">
+            <img src="/img/notificacao.png" alt="notificação" /> 
+            </Link>
           </div>
           <div className={styles.perfil}>
           <Link href="/pagina-de-dados-usuario">
@@ -39,6 +42,11 @@ export default function page() {
         </div>
       </header>
       <main className={styles.main}>
+        <div className={styles.fechar}>
+          <button onClick={handleClick}>
+            <img src="/img/x.png"/>
+          </button>
+        </div>
         <div className={styles.pet}>
           <h1>Prontuario pet</h1>
           <h2> <b className={styles.b}>Foto do Pet</b>(Opicional)</h2>
@@ -63,7 +71,7 @@ export default function page() {
             <br />
             <div className={styles.dataNas}>
               <label htmlFor={styles.DataNascimento}>Data de Nascimento:</label>
-              <input type="date" name="Data de Nascimento" id="DataNascimento" placeholder="" autoComplete="off" readOnly />
+              <input type="date" name="Data de Nascimento" id="DataNascimento" placeholder=" " autoComplete="off" readOnly />
             </div>
             <br />
             <div className={styles.cor}>
@@ -121,10 +129,9 @@ export default function page() {
             
             <br />
             <div className={styles.obs}>
-              <label htmlFor={styles.Obs}>Observaçõa:</label>
-              <input type="text" name="observacao" id="OBS" placeholder="Observaçõa no Pet" autoComplete="Obs" readOnly />
+              <label htmlFor={styles.Obs}>Observação:</label>
             </div>
-            
+            <input className={styles.inputOBS} type="text" name="observacao" id="OBS" placeholder="Observação do Pet" autoComplete="Obs" readOnly />
           </fieldset>
         </form>
       </main>
