@@ -2,6 +2,9 @@
     
     margin: 0px;
     padding: 0px;
+    height: 100%;
+    /*pagina completa*/
+
 }
 .header{
     display: flex;
@@ -10,6 +13,8 @@
     height: 90px;
     justify-content: space-between;
     flex-direction: row;
+    /*cabeçalho*/
+    
 }
 .logo1{
     display: flex;
@@ -18,6 +23,7 @@
     height: 10vh;
     margin-left: 20px;
     flex-direction: row;
+    /*conteiner de logo1 */
 }
 .logo1 .logo{
     
@@ -27,10 +33,12 @@
     align-items: center;
     justify-content: center;
     left: 150px;
+    /*conteiner da img do cabeçalho*/
 }
 .header .logo1 .logo img{
     display: flex;
     width: 50px;
+    /*imagem logo*/
     
 }
 .header .logo1 .logo h1{
@@ -45,6 +53,8 @@
     white-space: nowrap;
     border-color: rgb(27, 247, 7);
     color: black;
+    /*conteiner do texto da logo /h1 da logo*/
+    
 }
 
 .header .logo1 .text{
@@ -53,7 +63,7 @@
     align-items: center; 
     margin-left: 70px;
     width: 300px;
-   
+    /*conteiner do h2 da logo*/
     
 }
 
@@ -64,6 +74,7 @@
     font-weight: normal;
     margin-top: 5px;
     color: black;
+    /*h2 da logo*/
     
 }
 
@@ -76,23 +87,19 @@
     flex-direction: row;
     border: none;
     width: 30%;
-    
+    /*conteiner de notif e perfil*/
 }
 .header .divP .notif{
-    width:90px;
+    width:150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    left: 150px;
+    left: 15px;
     height: 75px;
-    margin-left: auto;
+    margin-left: 50%;
+    /*conteiner de notif*/
  
-}
-.button img{
-    width: 100%;
-    height: 100%;
-
 }
 .header .divP .notif .button img {
     width: 70px;
@@ -100,6 +107,9 @@
     justify-content: center;
     display: block;
     height: 50px;
+    background-color: #3A85CA;
+    margin-left: -35%;
+    /*conteiner de notif/img*/
 }
 .header .divP .notif .button{
     border: none;
@@ -109,30 +119,176 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
+    /*butão de notif*/
+    
 }
-.header .divP .perfil{
-    width: 130px;
+.header .divP .perfil img {
+    width: 65px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    left: 150px;
-   
-}
-.header .divP .perfil .button{
-    
-    border: none;
-    outline: none;
-    padding: 0%;
-    margin: 0%;
-    outline: none;
-    background-color:transparent;
-    cursor: pointer;
-    width: 50%;
-    height: 85%;
-    
-}
-.header .divP .perfil .nome {
-    margin-top: -5px;
+    left: 10px;
+    background-color: #3A85CA;
+    margin-left: -25%;
+    /*conteiner de perfil do proprietario /img*/
 }
 
+.header .divP .perfil .userNameLink{
+    display: block;
+    margin-top: 9px;
+    color: #0a0a0a; 
+    text-decoration: none; 
+    font-size: 14px; 
+    margin-left: -35%;
+    margin-top: -2%;
+    /*conteiner de link/UserName*/
+
+}
+
+.main .pet{
+    background-color: aqua;
+    display: grid;
+    place-items: center;
+    margin-top: 2%;
+    /*conteiner de pet*/
+    
+}
+.main .fotoperfil{
+    margin-top: 1.5%;
+    display: grid;
+    place-items: center;
+    /*conteiner de foto de perfil do pet*/
+
+}
+
+.main .fotoperfil .foto img{
+    width: 105%;
+    height: 110px;
+    /*tamanho da ft de perfil do animal*/
+    
+}
+.main .pet h1{
+    color: #3A85CA;
+    font-size: 230%;
+    /*Prontuario pet*/
+    
+}
+.main .pet h2{
+    margin-top: 30px;
+    color: #000000;
+    float: left;
+    font-weight: normal;
+    font-weight: 170px;
+    font-size: 80%;
+    background-color: #3A85CA;
+    width: 13%;
+    /*conteiner/(opicional)*/
+}
+.main .pet h2 .b{
+    color: #050505;
+    float: left;
+    font-size: 130%;
+    margin-top: -3px;
+    margin-right: 5%;
+    /*Foto do pet*/
+   
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    padding: 50px;
+    background-color: rgb(252, 252, 252);
+
+    /*conteiner*/
+   
+}
+.form fieldset{
+    color: #000000;
+    font-family:Arial, Helvetica, sans-serif;
+    /*cor todal do formulario*/
+
+}
+.primeira{
+    height: 500px;
+    background-color: aquamarine;
+    width: 50%;
+    /*conteiner do promeiro fieldest*/
+
+}
+.form .primeira input{
+    background-color: aqua;
+    margin-left: 15px;
+    /*pega todos os inputs*/
+
+}
+.form .primeira .vacina {
+    background-color: rgb(250, 2, 2);
+    display: flex;
+    gap: 15px;
+    /*conteiner. coloca data dolado de vacina*/
+
+}
+
+.form .primeira .datVac{
+    background-color: rgb(2, 250, 105);
+    width: 30%;
+    /*conteiner. afasta data de vacina*/
+
+}
+.form .primeira .datVac input{
+    width: 97px;
+     /*diminui o tamanho do campo*/
+}
+
+
+
+.segunda{
+    background-color: rgb(245, 146, 223);
+    width: 50%;
+    /*conteiner do segundo fieldest*/
+}
+.form .segunda input{
+    background-color: aqua;
+    margin-left: 15px;
+    /*pega todos os inputs*/
+}
+.form .segunda .Peso{
+    background-color: #f00a0a;
+    display: flex;
+
+    /*conteiner. coloca uf do lado de peso*/
+}
+.form .segunda .Peso input{
+    width: 80px;
+     /*diminui o tamanho do campo*/
+}
+.form .segunda .uf {
+    background-color: #3A85CA;
+    width: 35%;
+    margin-left: 15px;
+
+    /*conteiner. afasta peso de uf*/
+
+}
+.form .segunda .uf input{
+    width: 50px;
+     /*diminui o tamanho do campo*/
+}
+.form .segunda .verm{
+    background-color: #f00a0a;
+    display: flex;
+    /*conteiner. Coloca data do lado de verm*/
+}
+.form .segunda .dataVerm{
+    background-color: #3A85CA;
+    margin-left: 15px;
+    /*conteiner. afasta data de vacina*/
+}
+.form .segunda .verm input{
+    width: 85px;
+    /*diminui o tamanho do campo*/
+}
+.form .segunda .dataVerm input{
+    
+}

@@ -1,10 +1,12 @@
 'use client';
 import Image from "next/image";
+import Link from 'next/link';  // Importa o componente Link do Next.js
 import { useState } from 'react';
 import styles from "./page.module.css";
 
 export default function page() {
   const [image, setImage] = useState("/img/perfil.png");
+  const userName = "Joana darck";  // Substitua pelo nome real do usuário
 
   return (
     <div className={styles.topo}>
@@ -27,24 +29,27 @@ export default function page() {
             </button>
           </div>
           <div className={styles.perfil}>
-            <button className={styles.button}>
-              <img src="/img/perfil.png" alt="foto do perfil" />
-            </button>
+          <Link href="/pagina-de-dados-usuario">
+              <img src="/img/perfil.png" alt="Foto do proprietário" />
+            </Link>
+          <Link href="/pagina-de-dados-usuario" className={styles.userNameLink}>
+            {userName}
+            </Link>
           </div>
         </div>
       </header>
-      <main>
+      <main className={styles.main}>
         <div className={styles.pet}>
           <h1>Prontuario pet</h1>
-          <h2>Foto do Pet (Opicional)</h2>
+          <h2> <b className={styles.b}>Foto do Pet</b>(Opicional)</h2>
         </div>
         <div className={styles.fotoperfil}>
           <label className={styles.foto}>
             <img src={image} alt="Foto do Pet" />
-            <input onChange={e => setImage(e.value)} type='file' name='foto' id='FP' hidden />
+            <input  type='file' name='foto' id='FP' hidden />
           </label>
         </div>
-        <form>
+        <form className={styles.form}>
           <fieldset className={styles.primeira}>
             <div className={styles.Nome}>
               <label htmlFor={styles.NomePet}>Nome do Pet:</label>
@@ -62,7 +67,7 @@ export default function page() {
             </div>
             <br />
             <div className={styles.cor}>
-              <label htmlFor={styles.CorPet}>Cor do pet:</label>
+              <label htmlFor={styles.CorPet}>Cor:</label>
               <input type="text" name="cor do pet" id="CorPet" placeholder="Cor do pet" autoComplete="off" readOnly />
             </div>
             <br />
@@ -79,22 +84,20 @@ export default function page() {
             <div className={styles.vacina}>
               <label htmlFor={styles.vac}>Vacina:</label>
               <input type="text" name="Vacina" id="Vac" placeholder="Vacina aplicada" autoComplete="off" readOnly />
-            </div>
-            <br />
-            <div className={styles.datVac}>
+              <div className={styles.datVac}>
               <label htmlFor={styles.datVAc}>Data:</label>
               <input type="date" name="Data de Vacina" id="dataVcn" placeholder="" autoComplete="off" readOnly />
+            </div>
             </div>
           </fieldset>
           <fieldset className={styles.segunda}>
             <div className={styles.Peso}>
               <label htmlFor={styles.peso}>Peso:</label>
               <input type="text" name="peso pet" id="PESO" placeholder="Peso do Pet" autoComplete="off" readOnly />
-            </div>
-            <br />
-            <div className={styles.uf}>
+              <div className={styles.uf}>
               <label htmlFor={styles.uf}> UF:</label>
               <input type="text" name="UF" id="uf" placeholder="Estado" autoComplete="off" readOnly />
+            </div>
             </div>
             <br />
             <div className={styles.scrSD}>
@@ -110,12 +113,12 @@ export default function page() {
             <div className={styles.verm}>
               <label htmlFor={styles.verm}>Vermifugação:</label>
               <input type="text" name="Vermifugação" id="VRM" placeholder="Vermifugação" autoComplete="Vermi" readOnly />
-            </div>
-            <br />
-            <div className={styles.dataVerm}>
+              <div className={styles.dataVerm}>
               <label htmlFor={styles.DatVRM}>Data:</label>
               <input type="date" name="DtaVermifugação" id="DatVRM" placeholder="" autoComplete="Vermi" readOnly />
             </div>
+            </div>
+            
             <br />
             <div className={styles.obs}>
               <label htmlFor={styles.Obs}>Observaçõa:</label>
