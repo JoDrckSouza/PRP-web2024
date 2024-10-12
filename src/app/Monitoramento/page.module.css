@@ -280,12 +280,7 @@
     width: 80px;
      /*diminui o tamanho do campo*/
 }
-.form .segunda .uf {
-    width: 35%;
-    margin-left: 15px;
 
-    /*conteiner. afasta peso de uf*/
-}
 .form .segunda .uf input{
     width: 50px;
     height: 20px;
@@ -313,15 +308,23 @@
     /*diminui o tamanho do campo*/
 }
 .form .segunda .inputOBS {
-    width: 50%;
+    background-color: #1662aa;
+    width: 35%;
     height: 50px;
-    margin-left: 17%;
-    margin-top: -15%;
+    margin-left: 2%;
+    margin-top: -19%;
     /*campo de observação*/
-    
+     
 }
 .form .segunda .obs  {
     padding-top: 5%;
     /*label de obs*/
 
 }
+ .form .segunda .dataObs{
+    background-color: aqua;
+    margin: 10%;
+    margin-top: -6%;
+    margin-left: 330px;
+
+ }

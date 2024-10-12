@@ -1,4 +1,5 @@
 'use client';
+import React from "react";
 import Image from "next/image";
 import Link from 'next/link';  // Importa o componente Link do Next.js
 import { useState } from 'react';
@@ -102,10 +103,15 @@ export default function page() {
             <div className={styles.Peso}>
               <label htmlFor={styles.peso}>Peso:</label>
               <input type="text" name="peso pet" id="PESO" placeholder="Peso do Pet" autoComplete="off" readOnly />
-              <div className={styles.uf}>
+              <div className={styles.dataVerm}>
+              <label htmlFor={styles.DatVRM}>Data:</label>
+              <input type="date" name="DtaVermifugação" id="DatVRM" placeholder="" autoComplete="Vermi" readOnly />
+            </div>
+            </div>
+            <br/>
+            <div className={styles.uf}>
               <label htmlFor={styles.uf}> UF:</label>
               <input type="text" name="UF" id="uf" placeholder="Estado" autoComplete="off" readOnly />
-            </div>
             </div>
             <br />
             <div className={styles.scrSD}>
@@ -130,8 +136,13 @@ export default function page() {
             <br />
             <div className={styles.obs}>
               <label htmlFor={styles.Obs}>Observação:</label>
+              <input className={styles.inputOBS} type="text" name="observacao" id="OBS" placeholder="Observação do Pet" autoComplete="Obs" readOnly />
+             <div className={styles.dataObs}>
+              <label htmlFor={styles.Datobs}>Data:</label>
+              <input type="date" name="DtaObservação" id="DatOBS" placeholder="" autoComplete="off" readOnly />
             </div>
-            <input className={styles.inputOBS} type="text" name="observacao" id="OBS" placeholder="Observação do Pet" autoComplete="Obs" readOnly />
+            </div>
+            
           </fieldset>
         </form>
       </main>
