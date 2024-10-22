@@ -1,4 +1,14 @@
-.marcador {
-    background-color: aqua;
-    width: 100%;
+.atraso {
+    background-color: red;
+    border-radius: 100%;
+}
+
+.concluido {
+    background-color: #00ff00;
+    border-radius: 100%;
+}
+
+.agendado {
+    background-color: #dbf306;
+    border-radius: 100%;
 }
