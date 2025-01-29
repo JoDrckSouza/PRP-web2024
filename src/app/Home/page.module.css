@@ -1,0 +1,208 @@
+.topo{
+    
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  /*pagina completa*/
+
+}
+.header{
+  display: flex;
+  background-color: #DADADA;
+  width: 100vw;
+  height: 90px;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 2px solid #1662aa;
+
+  /*cabeçalho*/
+  
+}
+.logo1{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 10vh;
+  margin-left: 20px;
+  flex-direction: row;
+  /*conteiner de logo1 */
+}
+.logo1 .logo{
+  
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 150px;
+  /*conteiner da img do cabeçalho*/
+}
+.header .logo1 .logo img{
+  display: flex;
+  width: 50px;
+  /*imagem logo*/
+  
+}
+.header .logo1 .logo h1{
+  font-size: 20px;
+  font-weight:bold;
+  margin-left: 100px;
+  margin-inline-end:-48px;
+  margin-top: -35px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  border-color: rgb(27, 247, 7);
+  color: black;
+  /*conteiner do texto da logo /h1 da logo*/
+  
+}
+
+.header .logo1 .text{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-left: 70px;
+  width: 300px;
+  /*conteiner do h2 da logo*/
+  
+}
+
+.header .logo1 .text .h2{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  font-weight: normal;
+  margin-top: 5px;
+  color: black;
+  /*h2 da logo*/
+  
+}
+
+.header .divP{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 10vh;
+  margin-left: 138px;
+  flex-direction: row;
+  border: none;
+  width: 30%;
+  /*conteiner de notif e perfil*/
+}
+.header .divP .notif{
+  width:150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 15px;
+  height: 75px;
+  margin-left: 50%;
+  /*conteiner de notif*/
+
+}
+.header .divP .notif img {
+  width: 70px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  height: 50px;
+  margin-left: -35%;
+  /*conteiner de notif/img*/
+}
+
+.header .divP .perfil img {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 10px;
+  margin-left: -45%;
+  /*conteiner de perfil do proprietario /img*/
+}
+
+.header .divP .perfil .userNameLink{
+  display: block;
+  margin-top: -10%;
+  color: #0a0a0a; 
+  text-decoration: none; 
+  font-size: 14px; 
+  margin-left: -60%;
+  /*conteiner de link/UserName*/
+
+}
+
+
+.container {
+  max-width: 250px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Npet  {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  color: #fc0808;
+  margin-top: 10px;
+  background-color: #0bf332;
+  padding: 8px;
+  border-radius: 8px 8px 8px 8px;
+  height: 15px;
+}
+
+.imageContainer {
+  background-color: #00ffb3;
+  margin: 20px 0;
+  position: relative;
+}
+
+.profileImage {
+  border-radius: 50%;
+  border-radius:0%;
+  height: 150px;
+  width: 150px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileLabel {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #0000FF;
+  padding: 10px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.iconButton:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.icon {
+  font-size: 32px;
+  color: black;
+}
