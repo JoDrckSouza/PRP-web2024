@@ -1,5 +1,7 @@
+
+
 .topo{
-    
+  overflow: hidden; /* Remove todas as barras de rolagem */
   margin: 0px;
   padding: 0px;
   height: 100%;
@@ -8,13 +10,14 @@
 
 }
 .header{
+  
   display: flex;
-  background-color: #DADADA;
+  background-color: #fffcfc;
   width: 100vw;
   height: 90px;
   justify-content: space-between;
   flex-direction: row;
-  border-bottom: 2px solid #1662aa;
+  border-bottom: 2px solid #707479;
 
   /*cabeçalho*/
   
@@ -113,6 +116,9 @@
   margin-left: -35%;
   /*conteiner de notif/img*/
 }
+.notif :hover {
+  transform: scale(1.06); /* Move para cima e aumenta de tamanho */
+}
 
 .header .divP .perfil img {
   width: 60px;
@@ -122,6 +128,9 @@
   left: 10px;
   margin-left: -45%;
   /*conteiner de perfil do proprietario /img*/
+}
+.perfil :hover {
+  transform: scale(1.06); /* Move para cima e aumenta de tamanho */
 }
 
 .header .divP .perfil .userNameLink{
@@ -134,34 +143,63 @@
   /*conteiner de link/UserName*/
 
 }
-
+.card {
+  background-color: rgba(218, 218, 218, 1);
+  min-height: 100vh; /* 100% da altura da viewport */
+  width: 100%; /* Ocupa toda a largura */
+  max-width: 200vw;
+  overflow: hidden; /* Remove todas as barras de rolagem */
+  padding: 0;
+}        
+.cardName {
+  margin-left: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+} 
 
 .container {
-  max-width: 250px;
-  margin: 20px auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação suave */
+  float: left;
+  max-width: 240px;
+  margin: 55px auto;
   text-align: center;
   background-color: #ffffff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+ height: 240px;
+ margin-left: 50px;
+}
+.container:hover {
+  transform: translateY(-10px) scale(1.05); /* Move para cima e aumenta de tamanho */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Aumenta o sombreamento para reforçar o efeito */
+}
+.H1Pet{
+  font-size: 20px;
+  margin-top: -5px;
+  align-items: center;
+  color: #ffffff;
+
 }
 
 .Npet  {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
-  color: #fc0808;
   margin-top: 10px;
-  background-color: #0bf332;
+  background-color: #2002cc;
   padding: 8px;
-  border-radius: 8px 8px 8px 8px;
   height: 15px;
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
+
 }
 
 .imageContainer {
-  background-color: #00ffb3;
   margin: 20px 0;
   position: relative;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .profileImage {
@@ -186,15 +224,17 @@
 .iconContainer {
   display: flex;
   justify-content: space-around;
-  border-top: 1px solid #0000FF;
-  padding: 10px;
+  border-top: 1px solid #170cb4;
+  padding: -19px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .iconButton {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
 }
 
 .iconButton:hover {

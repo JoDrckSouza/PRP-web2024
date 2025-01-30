@@ -48,13 +48,13 @@ export default function page() {
           </div>
         </div>
       </header>
-    <main className="card"> 
+    <main className={styles.card}> 
+      <h1 className={styles.cardName}>Pets cadastrados</h1>
     <div className={styles.container}>
-      <div className={styles.Npet}>
+      <div className={styles.Npet}> 
+      <h1 className={styles.H1Pet}>Bilu</h1>
       </div>
-      <h1 className="H1Pet">Bilu</h1>
-
-      <div className={styles.imageContainer}>
+      <div className={styles.imageContainer}>   
   <label htmlFor="fileInput">
     <img 
       src="/img/perfil.png"
