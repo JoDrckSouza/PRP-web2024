@@ -1,14 +1,78 @@
-.atraso {
-    background-color: red;
-    border-radius: 100%;
-}
-
-.concluido {
-    background-color: #00ff00;
-    border-radius: 100%;
-}
-
-.agendado {
-    background-color: #dbf306;
-    border-radius: 100%;
-}
+.calendarContainer {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .agendado {
+    background-color: lightblue !important;
+    border-radius: 50%;
+  }
+  
+  .concluido {
+    background-color: lightgreen !important;
+    border-radius: 50%;
+  }
+  
+  .atraso {
+    background-color: lightcoral !important;
+    border-radius: 50%;
+  }
+  /* src/components/Agendamento.module.css */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .calendarContainer {
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .eventList {
+    margin-top: 20px;
+  }
+  
+  .eventItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .eventItem p {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .saveButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .saveButton:hover {
+    background-color: #45a049;
+  }
+  

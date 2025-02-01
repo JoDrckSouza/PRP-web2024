@@ -1,52 +1,47 @@
+// src/components/Agendamento.jsx
 'use client';
-import CustomCalendar from './calendar.js'; 
-import React from "react";
-import Link from 'next/link';  // Importa o componente Link do Next.js
-import styles from "./page.module.css";
-import { useState } from 'react';
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import { FaSyringe, FaBone } from "react-icons/fa";
+import { AiOutlineCalendar } from "react-icons/ai";
+import styles from "./calendar.module.css";
 
+export default function Agendamento() {
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
+  const handleDateChange = (date) => setSelectedDate(date);
 
-export default function page() {
-    const [image, setImage] = useState("/img/perfil.png");
-    const userName = "Joana darck";  // Substitua pelo nome real do usuário*/
-    return(
-      
-        <div className={styles.topo}>
-        <header className={styles.header}>
-          <div className={styles.logo1}>
-            <div className={styles.logo}>
-              <img src="/img/Vector.png" alt="logo" />
-              <h1>PRP -</h1>
-            </div>
-            <div className={styles.text}>
-              <h2 className={styles.h2}>
-                Plataforma de Registro de Pets
-              </h2>
-            </div>
+  const events = [
+    { date: "2025-01-10", text: "Vacina (Gripe canina) - 1ª dose", icon: <FaSyringe color="red" /> },
+    { date: "2025-01-16", text: "Vermifugacao (3 kg - 1,0 mL)", icon: <FaBone color="yellow" /> },
+    { date: "2025-01-17", text: "Vermifugacao (4 kg - 1,5 mL)", icon: <FaBone color="green" /> },
+    { date: "2025-01-19", text: "Vermifugacao (4 kg - 2,0 mL)", icon: <FaBone color="green" /> },
+    { date: "2025-01-31", text: "Vacina (Giárdia) - 1ª dose", icon: <FaSyringe color="yellow" /> },
+    { date: "2025-01-31", text: "Visita", icon: <AiOutlineCalendar color="blue" /> },
+  ];
+
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.header}>Agendamento</h1>
+      <div className={styles.calendarContainer}>
+        <Calendar
+          onChange={handleDateChange}
+          value={selectedDate}
+          className={styles.calendar}
+        />
+      </div>
+
+      <div className={styles.eventList}>
+        {events.map((event, index) => (
+          <div className={styles.eventItem} key={index}>
+            {event.icon}
+            <p className={styles.eventText}>{event.date}: {event.text}</p>
           </div>
-          <div className={styles.divP}>
-            <div className={styles.notif}>
-            <Link href="/pagina-de-dados-usuario">
-              <img src="/img/notificacao.png" alt="notificação" /> 
-              </Link>
-            </div>
-            <div className={styles.perfil}>
-            <Link href="/pagina-de-dados-usuario">
-                <img src="/img/perfil.png" alt="Foto do proprietário" />
-              </Link>
-            <Link href="/pagina-de-dados-usuario" className={styles.userNameLink}>
-              {userName}
-              </Link>
-            </div>
-          </div>
-        </header>
-        <main>
-          <div>
-         <CustomCalendar />
-          </div>
-        </main>
-      </div> 
-        
-    );
-};
+        ))}
+      </div>
+
+      <button className={styles.saveButton}>Salvar</button>
+    </div>
+  );
+}

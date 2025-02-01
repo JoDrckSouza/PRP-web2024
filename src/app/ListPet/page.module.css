@@ -1,7 +1,7 @@
 
 
 .topo{
-  overflow: hidden; /* Remove todas as barras de rolagem */
+  overflow: hidden; 
   margin: 0px;
   padding: 0px;
   height: 100%;
@@ -179,6 +179,7 @@
   align-items: center;
   color: #ffffff;
 
+
 }
 
 .Npet  {
@@ -198,19 +199,25 @@
 .imageContainer {
   margin: 20px 0;
   position: relative;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 10px;
+  margin-left: 1px;
 }
 
 .profileImage {
   border-radius: 50%;
-  border-radius:0%;
-  height: 150px;
-  width: 150px;
+  border-radius:50%;
+  height: 140px;
+  max-width:  140px;
+  object-fit: cover; /* Preenche o espaço sem distorção */
+  object-position: center;
+ 
 }
 
 .fileInput {
+  border-radius: 25px;
   display: none;
+  object-fit: cover; /* Preenche o espaço sem distorção */
+  object-position: center;
 }
 
 .fileLabel {
