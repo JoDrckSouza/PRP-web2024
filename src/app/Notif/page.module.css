@@ -1,0 +1,225 @@
+
+
+.topo{
+    overflow: hidden; 
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color:  rgba(179, 215, 249, 1);
+    /*pagina completa*/
+  
+  }
+  .header{
+    
+    display: flex;
+    background-color: #fff;
+    width: 100vw;
+    height: 90px;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 2px solid #707479;
+  
+    /*cabeçalho*/
+    
+  }
+  .logo1{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 10vh;
+    margin-left: 20px;
+    flex-direction: row;
+    /*conteiner de logo1 */
+  }
+  .logo1 .logo{
+    
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 150px;
+    /*conteiner da img do cabeçalho*/
+  }
+  .header .logo1 .logo img{
+    display: flex;
+    width: 50px;
+    /*imagem logo*/
+    
+  }
+  .header .logo1 .logo h1{
+    font-size: 20px;
+    font-weight:bold;
+    margin-left: 100px;
+    margin-inline-end:-48px;
+    margin-top: -35px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    white-space: nowrap;
+    border-color: rgb(27, 247, 7);
+    color: black;
+    /*conteiner do texto da logo /h1 da logo*/
+    
+  }
+  
+  .header .logo1 .text{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-left: 70px;
+    width: 300px;
+    /*conteiner do h2 da logo*/
+    
+  }
+  
+  .header .logo1 .text .h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    font-weight: normal;
+    margin-top: 5px;
+    color: black;
+    /*h2 da logo*/
+    
+  }
+  
+  .header .divP{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 10vh;
+    margin-left: 138px;
+    flex-direction: row;
+    border: none;
+    width: 30%;
+    /*conteiner de notif e perfil*/
+  }
+  .header .divP .notif{
+    width:150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 15px;
+    height: 75px;
+    margin-left: 50%;
+    /*conteiner de notif*/
+  
+  }
+  .header .divP .notif img {
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    height: 50px;
+    margin-left: -35%;
+    /*conteiner de notif/img*/
+  }
+  .notif :hover {
+    transform: scale(1.06); /* Move para cima e aumenta de tamanho */
+  }
+  
+  .header .divP .perfil img {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 10px;
+    margin-left: -45%;
+    /*conteiner de perfil do proprietario /img*/
+  }
+  .perfil :hover {
+    transform: scale(1.06); /* Move para cima e aumenta de tamanho */
+  }
+  
+  .header .divP .perfil .userNameLink{
+    display: block;
+    margin-top: -10%;
+    color: #0a0a0a; 
+    text-decoration: none; 
+    font-size: 14px; 
+    margin-left: -60%;
+    /*conteiner de link/UserName*/
+  
+  }
+
+.container{
+    
+    background-color: rgba(179, 215, 249, 1);
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    
+   
+}
+  
+.container2{
+    margin-top: 8px;
+    border: 1px solid black;
+    display: grid;
+    place-items: center; /* Centraliza horizontalmente e verticalmente */
+    max-height: 100%; /* Define a altura máxima */
+    max-width: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+    max-height: 100%; /* Define a altura máxima */
+    background-color: rgba(179, 215, 249, 1);
+    justify-items: start; /* Alinha os itens à esquerda */
+ }
+ .fechar{
+    margin-left: 97%;
+   
+}
+ .fechar button{
+    margin-top: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+.fechar :hover {
+    transform: scale(1.06); /* Move para cima e aumenta de tamanho */
+  }
+
+ .Notif{
+    
+    padding-left: 90px;
+    padding-right: 90px;
+ }
+ .icone {
+    margin-right: 20px;
+    margin-left: -65px;
+    margin-top: 65px;
+ }
+ 
+ .Notif h2 { 
+    text-align: center;
+    margin-top: -39px;
+    margin-left: 20px;
+ }
+ .mensage{ 
+    margin-left: 20px;
+    margin-top: 25px;
+    padding: 25px;
+ }
+
+ .icon{
+    width: 50px;
+
+ }
+ .notifText .icon{
+    margin-top: 15px;
+    display: flex; 
+    margin-left: -60px;
+    margin-top: -25px;  
+    
+ }
+ .notifText {
+    margin-left: 80px;
+    
+ }
+ .text{
+    margin-top: 10px;
+
+ }
