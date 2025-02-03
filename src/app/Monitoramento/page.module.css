@@ -286,7 +286,7 @@
     /*conteiner. coloca uf do lado de peso*/
 }
 .form .segunda .Peso input{
-    width: 80px;
+    width: 75px;
      /*diminui o tamanho do campo*/
 }
 
@@ -317,7 +317,6 @@
     /*diminui o tamanho do campo*/
 }
 .form .segunda .inputOBS {
-    background-color: #1662aa;
     width: 35%;
     height: 50px;
     margin-left: 2%;
@@ -331,9 +330,9 @@
 
 }
  .form .segunda .dataObs{
-    background-color: aqua;
     margin: 10%;
     margin-top: -6%;
     margin-left: 330px;
 
  }
+ 

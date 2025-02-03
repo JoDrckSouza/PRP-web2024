@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { FaPaw, FaBell, FaCheckCircle, FaExclamationTriangle, FaTimes } from "react-icons/fa";
 import styles from "./page.module.css";
 import Link from "next/link";
-
 import Image from 'next/image';
+
 
 export default function UserProfile() {
   // Estados para armazenar os dados do usuário
@@ -17,7 +17,7 @@ export default function UserProfile() {
     email: '',
   });
 
-{// Simulação de uma requisição futura para popular os dados do usuário}
+  // Simulação de uma requisição futura para popular os dados do usuário
   useEffect(() => {
     // Exemplo de simulação de dados obtidos de uma API
     const fetchUserData = async () => {
@@ -36,46 +36,45 @@ export default function UserProfile() {
   }, []);
 
   return (
-    <div className="bg-blue-200 p-8 rounded-lg max-w-xl mx-auto text-center">
-      <h1 className="text-2xl font-bold text-gray-700">Meu Perfil</h1>
-      <div className="flex justify-center mt-4">
-        <Image
-          src="/placeholder-profile.png" // Imagem genérica
+    <div className={styles.profileContainer}>
+      <h1 className={styles.profileTitle}>Meu Perfil</h1>
+      <div className={styles.profileImageContainer}>
+        <img
+          src="./img/perfil.png" // Imagem genérica
           alt="Imagem do usuário"
-          width={100}
-          height={100}
-          className="rounded-full"
+          className="profile-image"
         />
       </div>
-      <p className="mt-2 font-semibold text-gray-700">{userData.name}</p>
+      <p className={styles.profileName}>{userData.name}</p>
 
-      <div className="grid grid-cols-2 gap-4 mt-6 text-left">
-        <div>
-          <label className="block font-semibold text-gray-600">Nome:</label>
-          <p className="bg-white p-2 rounded-md">{userData.name}</p>
-        </div>
-        <div>
-          <label className="block font-semibold text-gray-600">Endereço:</label>
-          <p className="bg-white p-2 rounded-md">{userData.address}</p>
-        </div>
-        <div>
-          <label className="block font-semibold text-gray-600">CPF:</label>
-          <p className="bg-white p-2 rounded-md">{userData.cpf}</p>
-        </div>
-        <div>
-          <label className="block font-semibold text-gray-600">Secretaria de Saúde:</label>
-          <p className="bg-white p-2 rounded-md">{userData.healthDepartment}</p>
-        </div>
-        <div>
-          <label className="block font-semibold text-gray-600">Telefone:</label>
-          <p className="bg-white p-2 rounded-md">{userData.phone}</p>
-        </div>
-        <div>
-          <label className="block font-semibold text-gray-600">Email:</label>
-          <p className="bg-white p-2 rounded-md">{userData.email}</p>
+      <div className={styles.profileCard}>
+        <div className={styles.profileGrid}>
+          <div className={styles.profileField}>
+            <label>Nome:</label>
+            <input type="text" id="Nproprietario" name="nome" placeholder="Nome do Proprietário" autoComplete="off" readOnly value={userData.name} />
+          </div>
+          <div className={styles.profileField}>
+            <label>Endereço:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Endereço" autoComplete="off" readOnly value={userData.address} />
+          </div>
+          <div className={styles.profileField}>
+            <label>CPF:</label>
+            <input type="text" id="cpf" name="cpf" placeholder="CPF" autoComplete="off" readOnly value={userData.cpf} />
+          </div>
+          <div className={styles.profileField}>
+            <label>Secretaria de Saúde:</label>
+            <input type="text" id="healthDepartment" name="healthDepartment" placeholder="Secretaria de Saúde" autoComplete="off" readOnly value={userData.healthDepartment} />
+          </div>
+          <div className={styles.profileField}>
+            <label>Telefone:</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Telefone" autoComplete="off" readOnly value={userData.phone} />
+          </div>
+          <div className={styles.profileField}>
+            <label>Email:</label>
+            <input type="text" id="email" name="email" placeholder="Email" autoComplete="off" readOnly value={userData.email} />
+          </div>
         </div>
       </div>
     </div>
   );
-}
 }
