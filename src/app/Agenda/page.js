@@ -1,69 +1,100 @@
-"use client"; 
-import React, { useState, useEffect } from "react"; 
-import Calendar from "react-calendar"; // Importa o componente de calendário
-import { format, isBefore, isToday } from "date-fns"; // Biblioteca para manipulação e formatação de datas
-import ptBR from "date-fns/locale/pt-BR"; // Localização em português brasileiro para datas
-import "react-calendar/dist/Calendar.css"; // Importa os estilos padrão do componente de calendário
-import { FaSyringe, FaBone } from "react-icons/fa"; // Ícones para os eventos no calendário
-import { AiOutlineCalendar } from "react-icons/ai"; // Ícone adicional para eventos
-import styles from "./calendar.module.css"; // Importação dos estilos personalizados
+"use client";
+import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
+import { format, isBefore, isToday, parseISO } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
+import { FaSyringe, FaStethoscope, FaHandHoldingHeart } from "react-icons/fa"; // Importando ícones
+import "react-calendar/dist/Calendar.css";
+import styles from "./calendar.module.css";
 
-export default function Agendamento() {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+function CustomCalendar() {
+  const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    // Simulação de dados (substituir pelo endpoint real)
-    const eventList = [
-      { date: "2025-01-10", text: "Vacina (Gripe canina) - 1ª dose", icon: <FaSyringe color="red" /> },
-      { date: "2025-01-16", text: "Vermifugação (3 kg - 1,0 mL)", icon: <FaBone color="yellow" /> },
-      { date: "2025-01-17", text: "Vermifugação (4 kg - 1,5 mL)", icon: <FaBone color="green" /> },
-      { date: "2025-01-31", text: "Visita", icon: <AiOutlineCalendar color="blue" /> }
+    // Simulação de dados vindos da API
+    const mockData = [
+      { date: "2025-02-10", type: "verificacao", text: "Vermifugação - Segunda dose" },
+      { date: "2025-02-19", type: "vacina", text: "Vacina - Primeira dose" },
+      { date: "2025-02-01", type: "visita", text: "Visita - Observação" },
+      { date: "2025-02-28", type: "visita", text: "Visita - Observação" }
     ];
-    setEvents(eventList);
+    setEvents(mockData);
   }, []);
 
-  const handleDateChange = (date) => setSelectedDate(date);
+  const getEventStyle = (date) => {
+    const formattedDate = format(date, "yyyy-MM-dd");
+    const event = events.find((event) => event.date === formattedDate);
 
-  // Função para atribuir classes aos tiles do calendário
-  const tileClassName = ({ date, view }) => {
-    if (view === "month") {
-      const formattedDate = format(date, "yyyy-MM-dd");
-      const event = events.find((event) => event.date === formattedDate);
+    if (event) {
+      if (isBefore(date, new Date()) && !isToday(date)) {
+        return styles.eventAtrasado;
+      }
 
-      if (event) {
-        // Verifica se a data do evento é anterior à data atual (atraso)
-        if (isBefore(date, new Date()) && !isToday(date)) {
-          return styles.atrasadoTile;
-        } else {
-          return styles.eventTile;
-        }
+      switch (event.type) {
+        case "vacina":
+          return styles.eventLilas;
+        case "verificacao":
+          return styles.eventVerde;
+        case "visita":
+          return styles.eventAzul;
+        default:
+          return "";
       }
     }
     return null;
   };
 
+  const renderEventIcon = (eventType) => {
+    switch (eventType) {
+      case "vacina":
+        return <FaSyringe />;
+      case "verificacao":
+        return <FaStethoscope />;
+      case "visita":
+        return <FaHandHoldingHeart />;
+      default:
+        return null;
+    }
+  };
+
+  const tileClassName = ({ date, view }) => {
+    if (view === "month") {
+      const eventStyle = getEventStyle(date);
+      return eventStyle ? `${styles.calendarTile} ${eventStyle}` : null;
+    }
+    return null;
+  };
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.header}>Agendamento</h1>
+    <div className={styles.calendarContainer}>
       <Calendar
-        locale="pt-BR"
-        onChange={handleDateChange}
-        value={selectedDate}
+        locale={ptBR}
+        onChange={setDate}
+        value={date}
         tileClassName={tileClassName}
         formatMonthYear={(locale, date) => format(date, "MMMM yyyy", { locale: ptBR })}
       />
-
-      <div className={styles.eventList}>
-        {events.map((event, index) => (
-          <div className={styles.eventItem} key={index}>
-            {event.icon}
-            <p className={styles.eventText}>
-              {format(new Date(event.date), "dd/MM")}: {event.text}
-            </p>
-          </div>
-        ))}
+      <div className={styles.eventListContainer}>
+        <h2 className={styles.eventHeader}>Eventos:</h2>
+        {events.map((event, index) => {
+          const isLeft = index % 2 === 0; // Alinha eventos alternadamente
+          return (
+            <div
+              className={isLeft ? styles.eventItemLeft : styles.eventItemRight}
+              key={index}
+            >
+              {/* Adicionando o ícone ao lado do texto do evento */}
+              <div className={styles.eventIcon}>
+                {renderEventIcon(event.type)}
+              </div>
+              <p>{`${event.date}: ${event.text}`}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
+
+export default CustomCalendar;

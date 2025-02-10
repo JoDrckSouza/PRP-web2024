@@ -10,9 +10,6 @@ const ListagemPet = () => {
 
   const [listaPet, setListaPet] = useState([
     { nome: "Kdid", foto: "" },
-    { nome: "Bilu", foto: "" },
-    { nome: "Rex", foto: "" },
-    { nome: "Luna", foto: "" },
   ]);
 
   const handleImageChange = (event, index, setProfileImage) => {
