@@ -54,7 +54,7 @@ function CustomCalendar() {
       case "visita":
         return <FaHandHoldingHeart />;
       default:
-        return null;
+        return null ;
     }
   };
 
