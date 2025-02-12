@@ -1,6 +1,163 @@
-/* Centralizar o container principal */
+
+.topo{
+  overflow: hidden; 
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  /*pagina completa*/
+
+}
+.header{
+  
+  display: flex;
+  background-color: #fffcfc;
+  width: 100vw;
+  height: 90px;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 2px solid #707479;
+
+  /*cabeçalho*/
+  
+}
+.logo1{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 10vh;
+  margin-left: 20px;
+  flex-direction: row;
+  /*conteiner de logo1 */
+}
+.logo1 .logo{
+  
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 150px;
+  /*conteiner da img do cabeçalho*/
+}
+.header .logo1 .logo img{
+  display: flex;
+  width: 50px;
+  /*imagem logo*/
+  
+}
+.header .logo1 .logo h1{
+  font-size: 20px;
+  font-weight:bold;
+  margin-left: 100px;
+  margin-inline-end:-48px;
+  margin-top: -35px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  border-color: rgb(27, 247, 7);
+  color: black;
+  /*conteiner do texto da logo /h1 da logo*/
+  
+}
+
+.header .logo1 .text{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-left: 70px;
+  width: 300px;
+  /*conteiner do h2 da logo*/
+  
+}
+
+.header .logo1 .text .h2{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  font-weight: normal;
+  margin-top: 5px;
+  color: black;
+  /*h2 da logo*/
+  
+}
+
+.header .divP{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 10vh;
+  margin-left: 138px;
+  flex-direction: row;
+  border: none;
+  width: 30%;
+  /*conteiner de notif e perfil*/
+}
+.header .divP .notif{
+  width:150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 15px;
+  height: 75px;
+  margin-left: 50%;
+  /*conteiner de notif*/
+
+}
+.header .divP .notif img {
+  width: 70px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  height: 50px;
+  margin-left: -35%;
+  /*conteiner de notif/img*/
+}
+.notif :hover {
+  transform: scale(1.06); /* Move para cima e aumenta de tamanho */
+}
+
+.header .divP .perfil img {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 10px;
+  margin-left: -45%;
+  /*conteiner de perfil do proprietario /img*/
+}
+.perfil :hover {
+  transform: scale(1.06); /* Move para cima e aumenta de tamanho */
+}
+
+.header .divP .perfil .userNameLink{
+  display: block;
+  margin-top: -10%;
+  color: #0a0a0a; 
+  text-decoration: none; 
+  font-size: 14px; 
+  margin-left: -60%;
+  /*conteiner de link/UserName*/
+
+}
+.main .fechar{
+  text-align: right;
+ 
+}
+.main .fechar button {
+  margin-top: 2%;
+  margin-right: -598px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  
+
+}
+
 .calendarContainer {
-  background-color: rgb(233, 5, 5);
+  background-color: #1270B0;
   padding: 20px;
   width: 100%; /* Ajuste a largura conforme necessário */
   max-width: 100%; /* Defina uma largura máxima para o container */
@@ -13,51 +170,59 @@
 
 /* Estilos para os eventos */
 .eventLilas {
-  background-color: #d8b4fe;
-  border: 2px solid #8b5cf6;
+  background-color: hsl(258, 54%, 43%);
+  border: 2px solid hsl(258, 54%, 43%);
   border-radius: 50%;
 }
 
 .eventVerde {
-  background-color: #bbf7d0;
-  border: 2px solid #22c55e;
+  background-color: #03d34f;
+  border: 2px solid #03d34f;
   border-radius: 50%;
 }
 
 .eventAzul {
-  background-color: #bfdbfe;
-  border: 2px solid #3b82f6;
+  background-color: #0342a8;
+  border: 2px solid #0342a8;
   border-radius: 50%;
 }
 
 .eventAtrasado {
-  background-color: #fca5a5;
-  border: 2px solid #ef4444;
+  background-color: #b80707;
+  border: 2px solid #b80707;
   border-radius: 50%;
 }
 
 /* Centralizar a lista de eventos */
 .eventListContainer {
+  background-color: #033C63;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centraliza os itens na lista */
-  margin-top: 20px;
-  width: 100%; /* Garante que a lista ocupe a largura inteira */
+  padding-top: -15px;
+  width: 103%; /* Garante que a lista ocupe a largura inteira */
+  margin-top: -15px;
+}
+.hr {
+  height: 7px; /* Aumenta a espessura */
+  background-color: #070A62; /* Define a cor */
+  border: none; /* Remove a borda padrão */
+  width: 103%; /* Define a largura */
+  margin: 20px auto; /* Centraliza a linha */
+  margin-left: -1.5%;
+ margin-top: -5px;
+
 }
 
-.eventHeader {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 15px; /* Espaço abaixo do título */
-}
+
 
 /* Alinhamento à esquerda para a primeira metade */
 .eventItemLeft {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Alinha os itens à esquerda */
-  margin-bottom: 10px;
-  width: 50%; /* Ajusta para metade da tela */
+  margin-bottom: 0%;
+  width: 70%; /* Ajusta para metade da tela */
 }
 
 /* Alinhamento à direita para a segunda metade */
@@ -65,9 +230,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-end; /* Alinha os itens à direita */
-  margin-bottom: 10px;
-  width: 50%; /* Ajusta para metade da tela */
+  margin-bottom: 1px;
+  width: 60%; /* Ajusta para metade da tela */
+  margin-top: -50px;
 }
+
 
 .eventIcon {
   font-size: 20px;
@@ -86,4 +253,11 @@
   align-items: center;
   justify-content: center; /* Centraliza os itens da lista de eventos */
   margin-bottom: 10px;
+}
+
+.reactcalendar {
+  background-color: #B3D7F9; /* Altere para a cor desejada */
+  border-radius: 8px;
+  padding: 10px;
+  color: rgb(12, 12, 12);
 }

@@ -1,7 +1,7 @@
 
 
 .topo{
-    overflow: hidden; 
+    
     margin: 0px;
     padding: 0px;
     height: 100%;
@@ -199,6 +199,7 @@
     margin-left: 20px;
  }
  .mensage{ 
+  
     margin-left: 20px;
     margin-top: 25px;
     padding: 25px;
@@ -216,10 +217,12 @@
     
  }
  .notifText {
+  color: #0a0a0a;
     margin-left: 80px;
     
  }
  .text{
+  color: #0a0a0a;
     margin-top: 10px;
 
  }

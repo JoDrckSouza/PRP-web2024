@@ -55,6 +55,7 @@
     gap: 10px;
     padding: 10px;
     white-space: nowrap;
+    color: #080808;
     /*conteiner do texto da logo /h1 da logo*/
     
   }
@@ -74,6 +75,7 @@
     font-family: Arial, Helvetica, sans-serif;
     white-space: nowrap;
     font-weight: normal;
+    color: #080808;
     /*h2 da logo*/
     
   }
@@ -189,10 +191,11 @@
   .fieldLabel {
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: #080808;
   }
   .input {
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    border: 1px solid #080808;
     border-radius: 0.5rem;
   }
  

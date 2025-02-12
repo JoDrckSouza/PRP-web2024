@@ -47,12 +47,12 @@ const ListagemPet = () => {
         </div>
         <div className={styles.divP}>
           <div className={styles.notif}>
-          <Link href="/pagina-de-dados-usuario">
+          <Link href="/Notif">
             <img src="/img/notificacao.png" alt="notificação" />
             </Link>
           </div>
           <div className={styles.perfil}>
-          <Link href="/pagina-de-dados-usuario">
+          <Link href="/Perfil">
               <img src="/img/perfil.png" alt="Foto do proprietário" />
             </Link>
           <Link href="/pagina-de-dados-usuario" className={styles.userNameLink}>

@@ -10,7 +10,7 @@ export default function Page() {
   const [pets, setPets] = useState([
     {
       id: 1,
-      nomePet: "Rex",
+      nomePet: "kDid",
       nomeProprietario: "Joana Darck",
       dataNascimento: "2020-01-15",
       cor: "Marrom",

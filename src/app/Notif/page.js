@@ -71,7 +71,7 @@ export default function page() {
             </button>
           </div>
           <div className={styles.Notif}>
-            <img src="./img/Vector.png" alt="Pata" className={styles.icone} /> 
+            <img src="/img/Vector.png" alt="Pata" className={styles.icone} /> 
             <h2>Seja bem-vindo(a) à Plataforma de Registro de Pets</h2>
             </div>
           <div className={styles.notificationList}>

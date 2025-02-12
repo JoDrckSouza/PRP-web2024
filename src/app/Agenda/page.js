@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import { format, isBefore, isToday, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
-import { FaSyringe, FaStethoscope, FaHandHoldingHeart } from "react-icons/fa"; // Importando ícones
+import { FaSyringe, FaStethoscope, FaHandHoldingHeart } from "react-icons/fa"; 
 import "react-calendar/dist/Calendar.css";
 import styles from "./calendar.module.css";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function CustomCalendar() {
   const [date, setDate] = useState(new Date());
@@ -14,6 +16,10 @@ function CustomCalendar() {
   useEffect(() => {
     // Simulação de dados vindos da API
     const mockData = [
+      { date: "2025-02-10", type: "verificacao", text: "Vermifugação - Segunda dose" },
+      { date: "2025-02-19", type: "vacina", text: "Vacina - Primeira dose" },
+      { date: "2025-02-01", type: "visita", text: "Visita - Observação" },
+      { date: "2025-02-28", type: "visita", text: "Visita - Observação" },
       { date: "2025-02-10", type: "verificacao", text: "Vermifugação - Segunda dose" },
       { date: "2025-02-19", type: "vacina", text: "Vacina - Primeira dose" },
       { date: "2025-02-01", type: "visita", text: "Visita - Observação" },
@@ -48,11 +54,11 @@ function CustomCalendar() {
   const renderEventIcon = (eventType) => {
     switch (eventType) {
       case "vacina":
-        return <FaSyringe />;
+        return <img src="./img/pawVacina.png"/>;
       case "verificacao":
-        return <FaStethoscope />;
+        return <img src="./img/pawVermi.png" />;
       case "visita":
-        return <FaHandHoldingHeart />;
+        return <img src="./img/pawVisita.png"/>;
       default:
         return null ;
     }
@@ -65,34 +71,75 @@ function CustomCalendar() {
     }
     return null;
   };
+  const handleClick = () => router.back();
 
   return (
-    <div className={styles.calendarContainer}>
-      <Calendar
-        locale={ptBR}
-        onChange={setDate}
-        value={date}
-        tileClassName={tileClassName}
-        formatMonthYear={(locale, date) => format(date, "MMMM yyyy", { locale: ptBR })}
-      />
-      <div className={styles.eventListContainer}>
-        <h2 className={styles.eventHeader}>Eventos:</h2>
-        {events.map((event, index) => {
-          const isLeft = index % 2 === 0; // Alinha eventos alternadamente
-          return (
-            <div
-              className={isLeft ? styles.eventItemLeft : styles.eventItemRight}
-              key={index}
-            >
-              {/* Adicionando o ícone ao lado do texto do evento */}
-              <div className={styles.eventIcon}>
-                {renderEventIcon(event.type)}
-              </div>
-              <p>{`${event.date}: ${event.text}`}</p>
+    <div className={styles.topo}>
+      <header className={styles.header}>
+        <div className={styles.logo1}>
+          <div className={styles.logo}>
+            <img src="/img/Vector.png" alt="logo" />
+            <h1>PRP -</h1>
+          </div>
+          <div className={styles.text}>
+            <h2 className={styles.h2}>
+              Plataforma de Registro de Pets
+            </h2>
+          </div>
+        </div>
+        <div className={styles.divP}>
+          <div className={styles.notif}>
+            <Link href="/pagina-de-dados-usuario">
+              <img src="/img/notificacao.png" alt="notificação" /> 
+            </Link>
+          </div>
+          <div className={styles.perfil}>
+            <Link href="/pagina-de-dados-usuario">
+              <img src="/img/perfil.png" alt="Foto do proprietário" />
+            </Link>
+            <Link href="/pagina-de-dados-usuario" className={styles.userNameLink}>
+              Joana Darck
+            </Link>
+          </div>
+        </div>
+      </header>
+        <main className={styles.main}>
+        <div className={styles.calendarContainer}>
+        <div className={styles.fechar}>
+        <Link href="./ListPet">
+              <button onClick={handleClick}>
+                <img src="/img/x.png" alt="Fechar" />
+              </button>
+              </Link>
             </div>
-          );
-        })}
-      </div>
+          <Calendar
+          className={styles.reactcalendar}
+            locale="pt-BR"
+            onChange={setDate}
+            value={date}
+            tileClassName={tileClassName}
+            formatMonthYear={(locale, date) => format(date, "MMMM yyyy", { locale: ptBR })}
+          />
+          <div className={styles.eventListContainer}>
+          <hr className={styles.hr}/>
+            {events.map((event, index) => {
+              const isLeft = index % 2 === 0; // Alinha eventos alternadamente
+              return (
+                <div
+                  className={isLeft ? styles.eventItemLeft : styles.eventItemRight}
+                  key={index}
+                >
+                  {/* Adicionando o ícone ao lado do texto do evento */}
+                  <div className={styles.eventIcon}>
+                    {renderEventIcon(event.type)}
+                  </div>
+                  <p>{`${event.date}: ${event.text}`}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        </main>
     </div>
   );
 }
